@@ -1,82 +1,63 @@
-<!doctype html>
-<html lang="ja">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "My Favorite Books", root_path, class: "navbar-brand" %>
+    </div>
 
-    <title>Product example for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="product.css" rel="stylesheet">
-  </head>
-
-  <body>
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">My Favorite Books</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">書籍カテゴリ<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">文学・評論</a></li>
-                <li><a href="#">人文・思想</a></li>
-                <li><a href="#">社会・政治</a></li>
-                <li><a href="#">歴史・地理</a></li>
-                <li><a href="#">投資・金融・会社経営</a></li>
-                <li><a href="#">医学・薬学</a></li>
-                <li><a href="#">コンピュータ・IT</a></li>
-                <li><a href="#">アート・建築・デザイン</a></li>
-                <li><a href="#">趣味・実用</a></li>
-                <li><a href="#">スポーツ・アウトドア</a></li>
-                <li><a href="#">資格・検定・就職</a></li>
-                <li><a href="#">旅行ガイド・マップ</a></li>
-                <li><a href="#">語学・辞事典・年鑑</a></li>
-                <li><a href="#">教育・学参・受験</a></li>
-                <li><a href="#">絵本・児童書</a></li>
-                <li><a href="#">コミック</a></li>
-                <li><a href="#">ラノベ・BL</a></li>
-                <li><a href="#">タレント写真集</a></li>
-                <li><a href="#">エンターテイメント</a></li>
-                <li><a href="#">雑誌</a></li>
-                <li><a href="#">楽譜・スコア・音楽書</a></li>
-                <li class="divider"></li>
-                <li><a href="#">全ジャンル</a></li>
-              </ul>
-            </li>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-item" data-toggle="dropdown" role="button" aria-expanded="false">書籍カテゴリ<span class="caret"></span></a>
+          <ul class="dropdown-menu row" role="menu">
+            <li class="col-xs-6 col-sm-3"><a href="#">文学・評論</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">人文・思想</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">社会・政治</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">歴史・地理</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">投資・金融・会社経営</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">医学・薬学</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">コンピュータ・IT</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">アート・建築・デザイン</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">趣味・実用</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">スポーツ・アウトドア</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">資格・検定・就職</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">旅行ガイド・マップ</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">語学・辞事典・年鑑</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">教育・学参・受験</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">絵本・児童書</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">コミック</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">ラノベ・BL</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">タレント写真集</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">エンターテイメント</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">雑誌</a></li>
+            <li class="col-xs-6 col-sm-3"><a href="#">楽譜・スコア・音楽書</a></li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="書籍名、著者名">
-            </div>
-            <button type="submit" class="btn btn-default btn-sm">検索</button>
-          </form>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">LogOut</a></li>
-          </ul>
-        </div>
+        </li>
+      </ul>
+      <%= link_to "ログアウト", root_path, class: "navbar-brand navbar-right" %>
+    </div>
+  </div>
+</nav>
+
+<% 10.times { %>
+  <div class="container-body clearfix">
+    <p class="book-title">リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック (Theory in practice)</p>
+    <div class="float-area">
+      <div class="book-img">
+        <%= image_tag 'readablecode.jpg'%>
       </div>
-    </nav>
-
-    <img src="<%= asset_path "GAPAKU3298_TP_V.jpg" %>" />
-    <div style="background-image:url(<%= asset_path "GAPAKU3298_TP_V.jpg" %>)" />
-
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  </body>
-</html>
+      <div class="book-author">
+        著者：　Dustin Boswell, Trevor Foucher
+      </div>
+    </div>
+    <div class="btn-area">
+      <button class="btn btn-danger">マイリストから削除</button>
+      <button class="btn btn-warning">Amazonで確認</button>
+    </div>
+  </div>
+<% } %>

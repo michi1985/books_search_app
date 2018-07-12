@@ -350,10 +350,31 @@ div.btn-area
 }
 
 // ボタンの指定
-.btn-success, .btn-warning, .btn-danger
+.btn-success
+{
+  padding: 10px 94px;
+  border: 0 none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+
+.btn-warning
 {
   padding: 10px 100px;
   border: 0 none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 10px;
+}
+
+.btn-danger
+{
+  padding: 10px 114px;
+  border: 0 none;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
   margin-right: 10px;

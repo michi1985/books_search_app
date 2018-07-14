@@ -1,26 +1,89 @@
-<h2>Log in</h2>
-
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "My Favorite Books", root_path, class: "navbar-brand" %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div>
+      <%= link_to "トップページ", root_path, class: "navbar-brand navbar-right" %>
+      <%= link_to "アカウント新規登録", new_user_registration_path, class: "navbar-brand navbar-right" %>
+    </div>
   </div>
+</nav>
+
+<div class="container-form clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="wrap">
+        <p class="form-title">LOG IN</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'login'}) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.text_field :email, autocomplete: "off" %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+          <div>
+            <%= f.submit "LOG IN", class: "btn btn-success btn-sm actions" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ログインしてるかどうかでの分岐処理
+
+<% if user_signed_in? %>
+  Login user:
+  <%= current_user.email %>
+
+  <%= link_to 'プロフィール変更', edit_user_registration_path %>
+  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "サインイン", new_user_registration_path %>
+  <%= link_to "ログイン", new_user_session_path %>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<p class="notice">
+  <%= notice %>
+</p>
+<p class="alert">
+  <%= alert %>
+
+-->
+
+<!-- <div class="container-form clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="wrap">
+        <p class="form-title">Log In</p>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name),　html: {class: 'login'}) do |f| %>
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "off" %>
+          </div>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.text_field :email, autocomplete: "off" %>
+          </div>
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "off" %>
+          </div>
+          <div>
+            <%= f.submit "Log In", class: "btn btn-success btn-sm actions" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div> -->

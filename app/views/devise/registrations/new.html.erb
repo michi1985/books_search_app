@@ -11,7 +11,7 @@
     </div>
     <div>
       <%= link_to "トップページ", root_path, class: "navbar-brand navbar-right" %>
-      <%= link_to "ログイン", login_path, class: "navbar-brand navbar-right" %>
+      <%= link_to "ログイン", new_user_session_path, class: "navbar-brand navbar-right" %>
     </div>
   </div>
 </nav>
@@ -20,9 +20,11 @@
   <div class="row">
     <div class="col-md-12">
       <div class="wrap">
-        <p class="form-title">Sign Up</p>
-        <%= form_for(resource, as: resource_name, url: registration_path(resource_name),   html: {class: 'login'}) do |f| %>
+        <div class="error-msg">
           <%= devise_error_messages! %>
+        </div>
+        <p class="form-title">Sign Up</p>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'login'}) do |f| %>
           <div class="field">
             <%= f.label :name %><br />
             <%= f.text_field :name, autofocus: true, autocomplete: "off" %>

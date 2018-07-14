@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "My Favorite Books", root_path, class: "navbar-brand" %>
+    </div>
+    <div>
+      <%= link_to "トップページ", root_path, class: "navbar-brand navbar-right" %>
+    </div>
+    <div class="navbar-text">
+      <%= current_user.name %> さんのマイリスト
+    </div>
+  </div>
+</nav>
+
+<% 3.times { %>
+  <div class="container-body clearfix">
+    <p class="book-title">リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック (Theory in practice)</p>
+    <div class="float-area">
+      <div class="book-img">
+        <%= image_tag 'readablecode.jpg'%>
+      </div>
+      <div class="book-author">
+        著者：　Dustin Boswell, Trevor Foucher
+      </div>
+    </div>
+    <div class="btn-area">
+      <button class="btn btn-primary btn-sm">マイリストから削除</button>
+      <button class="btn btn-warning btn-sm">Amazonで購入</button>
+      <button class="btn btn-danger">楽天で購入</button>
+    </div>
+  </div>
+<% } %>

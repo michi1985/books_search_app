@@ -45,8 +45,13 @@
         </div>
         <button type="submit" class="btn btn-default btn-sm">検索</button>
       </form>
-        <%= link_to "ログイン", login_path, class: "navbar-brand navbar-right" %>
+      <% if user_signed_in? %>
+        <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class:  "navbar-brand navbar-right" %>
+        <%= link_to "マイページ", user_path(current_user.id), class: "navbar-brand navbar-right" %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "navbar-brand navbar-right" %>
         <%= link_to "アカウント新規登録", new_user_registration_path, class: "navbar-brand navbar-right" %>
+      <% end %>
     </div>
   </div>
 </nav>
@@ -63,8 +68,10 @@
       </div>
     </div>
     <div class="btn-area">
-      <button class="btn btn-success btn-sm">マイリストに追加</button>
-      <button class="btn btn-warning btn-sm">Amazonで購入</button>
+      <% if user_signed_in? %>
+        <button class="btn btn-warning btn-sm">マイリストに追加</button>
+      <% end %>
+      <button class="btn btn-success btn-sm">Amazonで購入</button>
       <button class="btn btn-danger">楽天で購入</button>
     </div>
   </div>

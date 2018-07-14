@@ -1,0 +1,40 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "My Favorite Books", root_path, class: "navbar-brand" %>
+    </div>
+    <div>
+      <%= link_to "トップページ", root_path, class: "navbar-brand navbar-right" %>
+      <%= link_to "アカウント新規登録", new_user_registration_path, class: "navbar-brand navbar-right" %>
+    </div>
+  </div>
+</nav>
+
+<div class="container-form clearfix">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="wrap">
+        <p class="form-title">
+            Log In</p>
+        <form class="login">
+          <input type="text" placeholder="email" />
+          <input type="password" placeholder="Password" />
+          <input type="submit" value="Log In" class="btn btn-success btn-sm" />
+          <div class="remember-forgot">
+              <div class="row">
+                <div class="col-md-6 forgot-pass-content">
+                    <a href="javascription:void(0)" class="forgot-pass">Forgot Password?</a>
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

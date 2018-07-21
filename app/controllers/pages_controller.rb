@@ -7,6 +7,15 @@ class PagesController < ApplicationController
     end
 
     session['timestamp'] = timestamp
+
+    @items = RakutenWebService::Books::Book.search(hits: 30)
+    # images_arr = []
+    # items.each do |item|
+    #
+    # # したい処理
+    # puts item['itemName'] #商品名
+    # puts item['itemPrice'] #価格
+    # puts item['itemUrl'] #商品のURL
   end
 
   def login

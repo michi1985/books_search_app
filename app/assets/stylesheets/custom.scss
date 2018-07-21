@@ -328,8 +328,8 @@ div.float-area
   }
 }
 
-// 書籍タイトル
-p.book-title
+// 書籍連番
+p.book-num
 {
   font-family: '07YasashisaAntique';
   text-align: left;
@@ -337,10 +337,43 @@ p.book-title
   font-size: 20px;
 }
 
+// 書籍タイトル
+.book-title
+{
+  font-family: '07YasashisaAntique';
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 20px;
+  &:hover, &:focus {
+    color: #7ff99d;
+    text-decoration: none;
+  }
+}
+
+// 書籍コンテンツ
+ul.book-content
+{
+  font-family: '07YasashisaAntique';
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+}
+
+// 書籍コンテンツタイトル
+ul.book-content-title
+{
+  font-family: '07YasashisaAntique';
+  text-align: left;
+  color: #FFFFFF;
+  font-size: 15px;
+  padding-top: 10px;
+}
+
 // 書籍画像
 div.book-img
 {
   float: left;
+  padding-right: 25px;
 }
 
 // 書籍著者

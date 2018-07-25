@@ -1,0 +1,63 @@
+var home_book_list = [];
+
+$(document).ready(function () {
+  $.ajax({
+    url: '/home_book_list',
+    datatype: 'json',
+    type: 'get'
+    }).done(function (returnData){
+    var data = [];
+    data = returnData;
+    home_book_list = returnData;
+    var title3 = data[0]
+    var title4 = data[0].params["title"]
+    data.forEach( function(book) {
+      console.log("タイトル:" + book.params["title"]);
+    });
+  });
+})
+
+$('#load_book_list').hover(
+  function() {
+    //マウスカーソルが重なった時の処理
+    var bookNum = 30;
+    home_book_list.forEach( function(book) {
+      bookNum++;
+      var add_content = "<div class='container-body clearfix'>"
+      add_content += "<p class='book-num'>"
+      add_content += bookNum +". "
+      add_content += "<a class='book-title' href='" + book.params["itemUrl"] + "'>" + book.params["title"] + "</a>"
+      add_content += "</p>"
+      add_content += "<div class='float-area'>"
+      add_content += "<div class='book-img'>"
+      add_content += "<img src=" + book.params['largeImageUrl'] + ">"
+      add_content += "</div>"
+      add_content += "<ul class='book-content-title'>"
+      add_content += "【著者】"
+      add_content += "</ul>"
+      add_content += "<ul class='book-content'>"
+      if (true) {
+        add_content += "著者名"
+      } else {
+        add_content += "※著者記載なし※"
+      }
+      add_content += "</ul>"
+      add_content += "<ul class='book-content-title'>"
+      add_content += "【内容】"
+      add_content += "</ul>"
+      add_content += "<ul class='book-content'>"
+      add_content += book.params["itemCaption"]
+      add_content += "</ul>"
+      add_content += "</div>"
+      add_content += "<div class='btn-area'>"
+      add_content += "</div>"
+      add_content += "</div>"
+
+      $("#add_place").append(add_content);
+    });
+  },
+  function() {
+    //マウスカーソルが離れた時の処理
+    $("#load_book_list").css("color", "red");
+  }
+);

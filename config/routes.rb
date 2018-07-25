@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
 
   root 'pages#home'
+  get  '/home_book_list',  to: 'pages#home_book_list'
 
 end

@@ -318,7 +318,7 @@ div.container-body
   padding: 20px 40px 20px 40px;
 }
 
-// コンテナ内の要素のfloatを解除するための擬似要素
+/* コンテナ内の要素のfloatを解除するための擬似要素 */
 div.float-area
 {
   &:after {
@@ -328,7 +328,7 @@ div.float-area
   }
 }
 
-// 書籍連番
+/* 書籍連番 */
 p.book-num
 {
   font-family: '07YasashisaAntique';
@@ -337,7 +337,7 @@ p.book-num
   font-size: 20px;
 }
 
-// 書籍タイトル
+/* 書籍タイトル */
 .book-title
 {
   font-family: '07YasashisaAntique';
@@ -350,7 +350,7 @@ p.book-num
   }
 }
 
-// 書籍コンテンツ
+/* 書籍コンテンツ */
 ul.book-content
 {
   font-family: '07YasashisaAntique';
@@ -359,7 +359,7 @@ ul.book-content
   font-size: 15px;
 }
 
-// 書籍コンテンツタイトル
+/* 書籍コンテンツタイトル */
 ul.book-content-title
 {
   font-family: '07YasashisaAntique';
@@ -369,14 +369,14 @@ ul.book-content-title
   padding-top: 10px;
 }
 
-// 書籍画像
+/* 書籍画像 */
 div.book-img
 {
   float: left;
   padding-right: 25px;
 }
 
-// 書籍著者
+/* 書籍著者 */
 div.book-author
 {
   font-family: '07YasashisaAntique';
@@ -391,7 +391,7 @@ div.btn-area
   padding-top: 20px;
 }
 
-// ボタンの指定
+/* ボタンの指定 */
 .btn-success
 {
   padding: 10px 94px;

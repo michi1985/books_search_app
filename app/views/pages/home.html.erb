@@ -57,11 +57,11 @@
 </nav>
 
 <% sequence = Enumerator.new(1..Float::INFINITY) %>
-<% @items.each do |item| %>
+<% @rakuten_items.each do |item| %>
   <div class="container-body clearfix">
     <p class="book-num">
       <%= sequence.next %>.
-      <%= link_to item.title, "#{item["itemUrl"]}", class: "book-title" %>
+      <%= link_to item["title"], "#{item["itemUrl"]}", class: "book-title" %>
     </p>
     <div class="float-area">
       <div class="book-img">
@@ -71,8 +71,8 @@
         【著者】
       </ul>
       <ul class="book-content">
-        <% if item.author != "" %>
-          <%= item.author %>
+        <% if item["author"] != "" %>
+          <%= item["author"] %>
         <% else %>
           ※著者記載なし※
         <% end %>
@@ -94,7 +94,7 @@
         <button class="btn btn-warning btn-sm">マイリストに追加</button>
       <% end %>
       <button class="btn btn-success btn-sm">Amazonで購入</button>
-      <button class="btn btn-danger">楽天で購入</button>
+      <%= link_to "楽天で購入", "#{item["itemUrl"]}", class: "btn btn-danger" %>
     </div>
   </div>
 <% end %>
@@ -102,8 +102,10 @@
 <div id ="add_place">
 </div>
 
-<p id="load_book_list">
-  ブックリストの追加
-</p>
+<div class="container-body clearfix load_book_list_area" id="load_book_list">
+ <p>
+   このエリアにマウスを乗せると次の30件を表示
+ </p>
+</div>
 
 <%= javascript_include_tag 'home' %>

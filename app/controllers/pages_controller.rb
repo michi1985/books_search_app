@@ -8,18 +8,25 @@ class PagesController < ApplicationController
 
     session['timestamp'] = timestamp
 
-    @items = RakutenWebService::Books::Book.search(page: 1)
-    # images_arr = []
-    # items.each do |item|
-    #
-    # # したい処理
-    # puts item['itemName'] #商品名
-    # puts item['itemPrice'] #価格
-    # puts item['itemUrl'] #商品のURL
+    @rakuten_items = RakutenWebService::Books::Book.search(page: 1)
+    #@rakuten_items = []
+    #100.times { |n|
+    #@rakuten_items.push(RakutenWebService::Books::Book.search(page: n+1))
+    #}
+    #著者名、内容コメントが楽天APIで空だった場合に
+    #AmazonAPIの情報を入れる
+    #@rakuten_items.each do |rakuten_item|
+    #  @amazon_item =
+    #  if rakuten_item["author"] == ""
+    #  end
+    #  if rakuten_item["itemCaption"] == ""
+    #  end
+    #end
+
   end
 
   def home_book_list
-    @items = RakutenWebService::Books::Book.search(page: 2)
+    @items = RakutenWebService::Books::Book.search(page: params[:page])
     render json: @items
   end
 

@@ -1,27 +1,32 @@
-var home_book_list = [];
+var homeBookList = [];
 
-$(document).ready(function () {
-  $.ajax({
-    url: '/home_book_list',
-    datatype: 'json',
-    type: 'get'
-    }).done(function (returnData){
-    var data = [];
-    data = returnData;
-    home_book_list = returnData;
-    var title3 = data[0]
-    var title4 = data[0].params["title"]
-    data.forEach( function(book) {
-      console.log("タイトル:" + book.params["title"]);
-    });
-  });
-})
+// $(document).ready(function () {
+//   $.ajax({
+//     url: '/home_book_list',
+//     datatype: 'json',
+//     type: 'get'
+//     }).done(function (returnData){
+//     var data = [];
+//     data = returnData;
+//     homeBookList = returnData;
+//   });
+// })
 
-$('#load_book_list').hover(
+//マウスカーソルが重なった時の処理
+var hoverNum = 0;
+$('#load_book_list').mouseenter(
   function() {
-    //マウスカーソルが重なった時の処理
-    var bookNum = 30;
-    home_book_list.forEach( function(book) {
+    hoverNum++;
+    $.ajax({
+      url: '/home_book_list',
+      data: {'page': hoverNum},
+      datatype: 'json',
+      type: 'get'
+      }).done(function (returnData){
+      homeBookList = returnData;
+    });
+    var bookNum = hoverNum * 30;
+    homeBookList.forEach( function(book) {
       bookNum++;
       var add_content = "<div class='container-body clearfix'>"
       add_content += "<p class='book-num'>"
@@ -50,14 +55,12 @@ $('#load_book_list').hover(
       add_content += "</ul>"
       add_content += "</div>"
       add_content += "<div class='btn-area'>"
+      add_content += "<button class='btn btn-success btn-sm'>Amazonで購入</button>"
+      add_content += "<a class='btn btn-danger' href='" + book.params["itemUrl"] + "'>楽天で購入</a>"
       add_content += "</div>"
       add_content += "</div>"
 
       $("#add_place").append(add_content);
     });
-  },
-  function() {
-    //マウスカーソルが離れた時の処理
-    $("#load_book_list").css("color", "red");
   }
 );

@@ -9,6 +9,9 @@ class PagesController < ApplicationController
     session['timestamp'] = timestamp
 
     @rakuten_items = RakutenWebService::Books::Book.search(page: 1)
+
+    # michi11@email.com foobarfoo
+    # @rakuten_items = RakutenWebService::Books::Book.search(page: 1)
     #@rakuten_items = []
     #100.times { |n|
     #@rakuten_items.push(RakutenWebService::Books::Book.search(page: n+1))
@@ -26,8 +29,8 @@ class PagesController < ApplicationController
   end
 
   def home_book_list
-    @items = RakutenWebService::Books::Book.search(page: params[:page])
-    render json: @items
+    @item = RakutenWebService::Books::Book.search(page: params[:page])
+    render json: @item
   end
 
   def login

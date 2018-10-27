@@ -15,7 +15,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'rakuten_web_service'
 gem 'autoprefixer-rails'
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets

@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
   devise_for :users, :controllers => {
-    :registrations => 'registrations'
+    # :sessions      => "registrations",
+    :registrations => 'users/registrations'
   }
   resources :users, only: [:show]
 
   root 'pages#home'
-  get    '/login',     to: 'pages#login'
-  get    '/mypage',    to: 'pages#mypage'
+  get  '/home_book_list',  to: 'pages#home_book_list'
 
 end

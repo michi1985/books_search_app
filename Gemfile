@@ -13,6 +13,7 @@ gem 'jquery-ui-rails'
 # Use sqlite3 as the database for Active Record
 gem 'bootstrap-sass'
 gem 'devise'
+gem 'rakuten_web_service'
 gem 'autoprefixer-rails'
 gem 'sqlite3'
 # Use Puma as the app server

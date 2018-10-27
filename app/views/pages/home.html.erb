@@ -56,23 +56,56 @@
   </div>
 </nav>
 
-<% 10.times { %>
+<% sequence = Enumerator.new(1..Float::INFINITY) %>
+<% @rakuten_items.each do |item| %>
   <div class="container-body clearfix">
-    <p class="book-title">リーダブルコード ―より良いコードを書くためのシンプルで実践的なテクニック (Theory in practice)</p>
+    <p class="book-num">
+      <%= sequence.next %>.
+      <%= link_to item["title"], "#{item["itemUrl"]}", class: "book-title" %>
+    </p>
     <div class="float-area">
       <div class="book-img">
-        <%= image_tag 'readablecode.jpg'%>
+        <%= image_tag item["largeImageUrl"] %>
       </div>
-      <div class="book-author">
-        著者：　Dustin Boswell, Trevor Foucher
-      </div>
+      <ul class="book-content-title">
+        【著者】
+      </ul>
+      <ul class="book-content">
+        <% if item["author"] != "" %>
+          <%= item["author"] %>
+        <% else %>
+          ※著者記載なし※
+        <% end %>
+
+      </ul>
+      <ul class="book-content-title">
+        【内容】
+      </ul>
+      <ul class="book-content">
+        <% if item["itemCaption"] != "" %>
+          <%= item["itemCaption"] %>
+        <% else %>
+          ※内容コメントなし※
+        <% end %>
+      </ul>
     </div>
     <div class="btn-area">
       <% if user_signed_in? %>
         <button class="btn btn-warning btn-sm">マイリストに追加</button>
       <% end %>
       <button class="btn btn-success btn-sm">Amazonで購入</button>
-      <button class="btn btn-danger">楽天で購入</button>
+      <%= link_to "楽天で購入", "#{item["itemUrl"]}", class: "btn btn-danger" %>
     </div>
   </div>
-<% } %>
+<% end %>
+
+<div id ="add_place">
+</div>
+
+<div class="container-body clearfix load_book_list_area" id="load_book_list">
+ <p>
+   このエリアにマウスを乗せると次の30件を表示
+ </p>
+</div>
+
+<%= javascript_include_tag 'home' %>

@@ -1,22 +1,22 @@
 var homeBookList = [];
 
-$(document).ready(function () {
+$(document).ready(function() {
   for (i=0; i < 2; i++) {
     $.ajax({
       url: '/home_book_list',
       datatype: 'json',
       type: 'get'
-      }).done(function (returnData){
+    }).done(function(returnData) {
       homeBookList = returnData;
     });
   }
   var hoverNum = 1;
   getData(hoverNum);
-})
+});
 
 //マウスカーソルが重なった時の処理
 $('#load_book_list').mouseenter(
-  function () {
+  function() {
     var hoverNum = 2;
     getData(hoverNum);
     hoverNum++;
@@ -30,7 +30,7 @@ function getData(hoverNum) {
     data: {'page': hoverNum},
     datatype: 'json',
     type: 'get'
-    }).done(function (returnData){
+  }).done(function (returnData){
     homeBookList = returnData;
   });
   if (hoverNum == 1) {
@@ -39,7 +39,7 @@ function getData(hoverNum) {
     var bookNum = (hoverNum - 1) * 30;
   }
   hoverNum++;
-  homeBookList.forEach( function(book) {
+  homeBookList.forEach(function(book) {
     bookNum++;
     console.log(elements);
     var add_content = "<div class='container-body clearfix'>"

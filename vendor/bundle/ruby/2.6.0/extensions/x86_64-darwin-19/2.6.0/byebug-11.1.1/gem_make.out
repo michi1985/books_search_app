@@ -1,0 +1,19 @@
+current directory: /Users/michi/michi_other/books_search_2/books_search_app/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+/Users/michi/.rbenv/versions/2.6.5/bin/ruby -I /Users/michi/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20200308-31990-1llzat3.rb extconf.rb
+creating Makefile
+
+current directory: /Users/michi/michi_other/books_search_2/books_search_app/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /Users/michi/michi_other/books_search_2/books_search_app/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR="
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/michi/michi_other/books_search_2/books_search_app/vendor/bundle/ruby/2.6.0/gems/byebug-11.1.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20200308-31990-r0epjc/byebug

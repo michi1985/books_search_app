@@ -1,0 +1,27 @@
+current directory: /Users/michi/Desktop/books_search/books_search_app/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+/Users/michi/.rbenv/versions/2.3.3/bin/ruby -r ./siteconf20191031-13559-5aoxrp.rb extconf.rb
+Ignoring raindrops-0.19.0 because its extensions are not built.  Try: gem pristine raindrops --version 0.19.0
+Ignoring unicorn-5.4.1 because its extensions are not built.  Try: gem pristine unicorn --version 5.4.1
+checking for BIO_read() in -lcrypto... yes
+checking for SSL_CTX_new() in -lssl... yes
+checking for openssl/bio.h... yes
+creating Makefile
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/michi/Desktop/books_search/books_search_app/vendor/bundle/ruby/2.3.0/extensions/x86_64-darwin-17/2.3.0-static/puma-3.11.4/mkmf.log
+
+current directory: /Users/michi/Desktop/books_search/books_search_app/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: /Users/michi/Desktop/books_search/books_search_app/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR="
+compiling io_buffer.c
+compiling mini_ssl.c
+compiling puma_http11.c
+compiling http11_parser.c
+linking shared-object puma/puma_http11.bundle
+
+current directory: /Users/michi/Desktop/books_search/books_search_app/vendor/bundle/ruby/2.3.0/gems/puma-3.11.4/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.bundle ./.gem.20191031-13559-1igihk0/puma

@@ -1,0 +1,80 @@
+var homeBookList = [];
+
+$(document).ready(function () {
+  for (i=0; i < 2; i++) {
+    $.ajax({
+      url: '/home_book_list',
+      datatype: 'json',
+      type: 'get'
+      }).done(function (returnData){
+      homeBookList = returnData;
+    });
+  }
+  var hoverNum = 1;
+  getData(hoverNum);
+})
+
+//マウスカーソルが重なった時の処理
+$('#load_book_list').mouseenter(
+  function () {
+    var hoverNum = 2;
+    getData(hoverNum);
+    hoverNum++;
+  }
+);
+
+function getData(hoverNum) {
+  elements = document.getElementsByName("content-test");
+  $.ajax({
+    url: '/home_book_list',
+    data: {'page': hoverNum},
+    datatype: 'json',
+    type: 'get'
+    }).done(function (returnData){
+    homeBookList = returnData;
+  });
+  if (hoverNum == 1) {
+    var bookNum = 0;
+  } else {
+    var bookNum = (hoverNum - 1) * 30;
+  }
+  hoverNum++;
+  homeBookList.forEach( function(book) {
+    bookNum++;
+    console.log(elements);
+    var add_content = "<div class='container-body clearfix'>"
+    add_content += "<p class='book-num'>"
+    add_content += bookNum +". "
+    add_content += "<a class='book-title' href='" + book.params["itemUrl"] + "'>" + book.params["title"] + "</a>"
+    add_content += "</p>"
+    add_content += "<div class='float-area'>"
+    add_content += "<div class='book-img'>"
+    add_content += "<img src=" + book.params['largeImageUrl'] + ">"
+    add_content += "</div>"
+    add_content += "<ul class='book-content-title'>"
+    add_content += "【著者】"
+    add_content += "</ul>"
+    add_content += "<ul class='book-content'>"
+    if (true) {
+      add_content += "著者名"
+    } else {
+      add_content += "※著者記載なし※"
+    }
+    add_content += "</ul>"
+    add_content += "<ul class='book-content-title'>"
+    add_content += "【内容】"
+    add_content += "</ul>"
+    add_content += "<ul class='book-content'>"
+    add_content += book.params["itemCaption"]
+    add_content += "</ul>"
+    add_content += "</div>"
+    add_content += "<div class='btn-area'>"
+    add_content += "<button class='btn btn-success btn-sm'>Amazonで購入</button>"
+    add_content += "<a class='btn btn-danger' href='" + book.params["itemUrl"] + "'>楽天で購入</a>"
+    add_content += "</div>"
+    add_content += "</div>"
+
+    $("#add_place").append(add_content);
+  });
+}
+;

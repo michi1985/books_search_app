@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cada3f25-cd56-461b-9edd-d8e0e46960f0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_data/book_search_development/users.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_data/book_search_development/users.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_data/ib_buffer_pool" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_data/ib_buffer_pool" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_data/ib_logfile0" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_data/ib_logfile0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_data/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/db/mysql_data/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/mysql_data/ibtmp1" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -29,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="175">
+              <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -121,8 +114,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+            <state relative-caret-position="1872">
+              <caret line="117" column="7" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -196,6 +189,8 @@
       <find>rake</find>
       <find>coderay</find>
       <find>actionview</find>
+      <find>with</find>
+      <find>pry</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -432,7 +427,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37081000" />
+    <option name="totallyTimeSpent" value="37513000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-217" width="1241" height="733" extended-state="0" />
@@ -580,15 +575,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        <state relative-caret-position="1872">
+          <caret line="117" column="7" selection-start-line="117" selection-start-column="4" selection-end-line="117" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="175">
+          <caret line="54" column="31" lean-forward="true" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
         </state>
       </provider>
     </entry>
